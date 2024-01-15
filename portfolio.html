@@ -1,357 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PhethoK.M. Portfolio</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css?family=Bitter);
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Bitter', serif;
-        }
-
-        html,
-        body {
-
-            height: 100%;
-            min-height: 100%;
-
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-
-            &.active {
-                border-bottom: 2px solid #85C2FF;
-            }
-        }
-
-
-
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        nav {
-            width: 100%;
-            height: 60px;
-            position: fixed;
-            top: 0;
-
-            background: rgba(0, 0, 0, 0.4);
-
-            ul {
-                padding: 20px;
-                margin: 0 auto;
-                list-style: none;
-                text-align: center;
-
-                li {
-                    display: inline-block;
-                    margin: 0 10px;
-
-                    a {
-                        padding: 10px 0;
-                        color: #fff;
-                        font-size: 18px;
-                        text-decoration: none;
-                        font-weight: bold;
-                        transition: all 0.2s ease;
-
-                        &:hover {
-                            color: #85C2FF;
-                        }
-                    }
-                }
-            }
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #5F4587;
-        }
-
-        section {
-            width: 100%;
-            height: 90%;
-            padding: 50px 0;
-            background: #fff;
-            border-bottom: 1px solid #5F4587;
-            text-align: center;
-
-        }
-
-        section#1.active {
-            background: #5F4587;
-        }
-
-        .sections {
-            section:first-child {
-                margin-top: 100px;
-                background: #5F4587;
-            }
-        }
-
-
-        #profile {
-            border: 2px;
-            border-radius: 50% 50%;
-
-        }
-
-        #name {
-            margin-top: 20px;
-            color: white;
-            size: 15px;
-        }
-
-        @keyframes name {
-            from {
-                transform: translateX(-180px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        .pro {
-            animation-name: name;
-            animation-duration: 1s;
-            animation-timing-function: ease-in;
-            animation-iteration-count: 1;
-
-        }
-
-        .skills {
-            list-style-type: none;
-        }
-
-        .About {
-            padding: 5rem;
-            font-size: 20px;
-        }
-
-        .no3 {
-            margin-top: 40px;
-        }
-
-        .buttons {
-            display: flex;
-            padding: 10px;
-            margin-top: 19px;
-
-        }
-
-        .but {
-            flex: 1;
-
-            text-align: center;
-        }
-
-        button {
-            border-radius: 25px;
-            margin: 0 auto;
-            display: block;
-            background-color: #fff;
-            border: 1px solid #885df1;
-            color: #885df1;
-            font-size: 16px;
-            line-height: 22px;
-            padding: 16px 24px;
-            text-decoration: none;
-            transition: all 200ms ease;
-        }
-
-        button:hover {
-            color: #fff;
-            background: #885df1;
-        }
-
-        .socials,
-        .socials *,
-        .socials *:before,
-        .socials *:after {
-            box-sizing: content-box;
-        }
-
-        .socials {
-            display: inline-block;
-            text-align: center;
-            font-size: 30px;
-
-        }
-
-        .icons li {
-            display: inline-block;
-        }
-
-        .icons {
-            list-style-type: none;
-            font-size: 30px;
-            margin: 0;
-            padding: 30px 0;
-
-        }
-
-        .icons li svg {
-
-            width: 30px;
-            height: 30px;
-            line-height: 20px;
-            padding: 1%;
-            border: 1px solid rgba(256, 256, 256, 0.6);
-            border-radius: 6px;
-            cursor: pointer;
-            margin-left: 10px;
-            margin-bottom: 20px;
-            transition: ease .3s;
-
-            &:hover {
-
-                -moz-transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-                -ms-transform: rotate(360deg);
-                transform: rotate(360deg);
-                transition: all 0.3s;
-            }
-        }
-
-        .bi-linkedin {
-            color: #007bb7;
-        }
-
-        .bi-facebook {
-            color: #3B5998;
-        }
-
-        .bi-instagram {
-            color: white;
-            background: #f09433;
-            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
-
-        }
-
-        .info-box {
-            display: flex;
-        }
-
-        .box {
-            flex: 1;
-            margin: 10px;
-            padding: 30px;
-            border: 1px solid #ccc;
-            text-align: center;
-
-            &:hover {
-                border: 2px solid #5F4587;
-                transform: scale(1.1);
-                transition: all 0.5s;
-
-            }
-
-        }
-
-        .box svg {
-            margin: 10px;
-
-        }
-
-        .box h2 {
-            margin-bottom: 30px;
-        }
-
-        .box p {
-            margin: 0;
-            size: 10px;
-        }
-
-        .education {
-            display: flex;
-            border: 1px solid #ccc;
-            margin: 20px;
-            margin-top: 80px;
-
-        }
-
-        #logo {
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-            padding-left: 30px;
-        }
-
-        #details {
-            flex: 1;
-            margin: 10px;
-            padding: 30px;
-        }
-
-
-        @media(max-width: 600px) {
-            .info-box {
-                flex-direction: column;
-                margin: 5px;
-
-            }
-
-            .box {
-                &:hover {
-                    border: 2px solid #5F4587;
-                    transform: scale(0.9);
-                    transition: all 0.5s;
-
-                }
-            }
-
-            h1 {
-                font-size: 40px;
-                color: #5F4587;
-            }
-
-            .About {
-                padding: 3rem;
-                font-size: 18px;
-            }
-
-            .education {
-                display: flex;
-                padding-right: 20px;
-                margin-top: 90px;
-
-                #logo {
-                    flex: 1;
-                    margin: 0px;
-                    padding-right: 10px;
-                    width: 200px;
-
-                }
-
-                #details {
-                    flex: 1;
-                    margin: 0px;
-                    padding: 30px;
-                }
-            }
-        }
-    </style>
+     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header id="header-scroll" class="small"
         style="background-color:#5F4587;  background-repeat: no-repeat; height: 90px; margin-top: 0;">
-
         <nav>
             <ul>
                 <li><a href="#1">Home</a></li>
@@ -372,8 +29,10 @@
                     width="250" height="370">
                 <br>
                 <h2 id="name" style="font-size: 30px;">Phetho K. M.</h2>
-                <p style="font-size: 20px; color: #fff; font-style: sans-serif;">'s Portfolio </p>
-            </div>
+              <p style="font-size: 25px; color: #fff; font-style: sans-serif;">'s Portfolio
+                    <br>
+                    Software Developer
+                </p>  </div>
         </div>
     </section>
 
@@ -390,6 +49,10 @@
             <br>
             <p>My interests include Web &Software development, ethical hacking and Cyber security. Hobbies include
                 reading, cooking and crocheting.</p>
+              <br>
+            <a href="C:\Users\cse21-068\OneDrive - Botswana Accountancy College\Desktop\Phetho Modimoothata CV.pdf"
+                class="button" download="Phetho Modimoothata CV.pdf"> <button type="button"> Download my CV
+                    📥</button></a>
         </div>
     </section>
 
@@ -508,49 +171,9 @@
         </div>
 
     </section>
+    
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top⬆️</button>
+     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <script>
-
-
-        //scrollspy
-        $(window).on('scroll', function () {
-            var sections = $('section')
-                , nav = $('nav')
-                , nav_height = nav.outerHeight()
-                , cur_pos = $(this).scrollTop();
-            sections.each(function () {
-                var top = $(this).offset().top - nav_height,
-                    bottom = top + $(this).outerHeight();
-
-                if (cur_pos >= top && cur_pos <= bottom) {
-                    nav.find('a').removeClass('active');
-                    sections.removeClass('active');
-
-                    $(this).addClass('active');
-                    nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
-                }
-            });
-        });
-    </script>
-
-    <script>
-        const sliders = document.querySelector('.no3');
-        const appearOptions = {};
-        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('appear');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-        sliders.forEach(slider => {
-            appearOnScroll.observe(slider);
-        });
-    </script>
 </body>
-
 </html>
